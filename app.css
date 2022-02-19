@@ -68,6 +68,25 @@ p {
   mix-blend-mode: normal;
 }
 
+.center {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (max-width: 768px) {
+  .center {
+    height: 100%;
+  }
+}
+
 .avatar {
   border-radius: 50%;
   max-width: 1.75rem;
@@ -108,11 +127,20 @@ p {
 }
 
 .testimonial-grid {
-  height: 100vh;
   padding: 2rem;
   display: -ms-grid;
   display: grid;
   gap: 1.875rem;
+}
+
+@media (min-width: 768px) {
+  .testimonial-grid {
+    -ms-grid-columns: (15.9375rem)[4];
+        grid-template-columns: repeat(4, 15.9375rem);
+    -ms-grid-rows: 17.625rem 16.625rem;
+        grid-template-rows: 17.625rem 16.625rem;
+        grid-template-areas: "one one two five" "three four four five";
+  }
 }
 
 .flex {
@@ -142,5 +170,23 @@ p {
 
 .author h2 {
   margin-bottom: 0.125rem;
+}
+
+@media (min-width: 768px) {
+  .one {
+    grid-area: one;
+  }
+  .two {
+    grid-area: two;
+  }
+  .three {
+    grid-area: three;
+  }
+  .four {
+    grid-area: four;
+  }
+  .five {
+    grid-area: five;
+  }
 }
 /*# sourceMappingURL=app.css.map */

@@ -89,6 +89,16 @@ p {
 
 // ----- Utilities ----- //
 
+.center {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (max-width: 768px) {
+    height: 100%;
+  }
+}
 // Avatars
 .avatar {
   border-radius: 50%;
@@ -131,10 +141,17 @@ p {
 
 // Layout Properties
 .testimonial-grid {
-  height: 100vh;
   padding: 2rem;
   display: grid;
   gap: 1.875rem;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(4, 15.9375rem);
+    grid-template-rows: 17.625rem 16.625rem;
+    grid-template-areas:
+      "one one two five"
+      "three four four five";
+  }
 }
 
 .flex {
@@ -160,5 +177,28 @@ p {
 
   h2 {
     margin-bottom: 0.125rem;
+  }
+}
+
+// ----- Grid ----- //
+@media (min-width: 768px) {
+  .one {
+    grid-area: one;
+  }
+
+  .two {
+    grid-area: two;
+  }
+
+  .three {
+    grid-area: three;
+  }
+
+  .four {
+    grid-area: four;
+  }
+
+  .five {
+    grid-area: five;
   }
 }
