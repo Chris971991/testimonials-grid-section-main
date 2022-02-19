@@ -146,7 +146,7 @@ p {
   gap: 1.875rem;
 
   @media (min-width: 768px) {
-    grid-template-columns: repeat(4, 15.9375rem);
+    grid-auto-columns: 15.9375rem;
     grid-template-rows: 17.625rem 16.625rem;
     grid-template-areas:
       "one one two five"
