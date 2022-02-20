@@ -66,6 +66,10 @@ body {
   background: url(./images/bg-pattern-quotation.svg);
   background-position: top right 5rem;
   background-repeat: no-repeat;
+
+  @media (max-width: $tablet) {
+    background-position: top right 2rem;
+  }
 }
 
 // XL Heading
