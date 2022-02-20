@@ -62,6 +62,12 @@ body {
   opacity: 0.7;
 }
 
+.bg-image {
+  background: url(./images/bg-pattern-quotation.svg);
+  background-position: top right 5rem;
+  background-repeat: no-repeat;
+}
+
 // XL Heading
 .heading-xl {
   font-weight: 600;
