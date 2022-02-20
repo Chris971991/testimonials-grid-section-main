@@ -127,18 +127,29 @@ p {
 }
 
 .testimonial-grid {
-  padding: 2rem;
+  padding: 1.5rem;
   display: -ms-grid;
   display: grid;
   gap: 1.875rem;
+  grid-auto-columns: 15.9375rem;
+  -ms-grid-rows: 17.625rem 16.625rem;
+      grid-template-rows: 17.625rem 16.625rem;
+      grid-template-areas: "one one two five" "three four four five";
 }
 
-@media (min-width: 768px) {
+@media (max-width: 1170px) {
   .testimonial-grid {
-    grid-auto-columns: 15.9375rem;
-    -ms-grid-rows: 17.625rem 16.625rem;
-        grid-template-rows: 17.625rem 16.625rem;
-        grid-template-areas: "one one two five" "three four four five";
+    grid-auto-columns: auto;
+    -ms-grid-rows: auto auto;
+        grid-template-rows: auto auto;
+        grid-template-areas: "one one" "two five" "three five" "four four";
+  }
+}
+
+@media (max-width: 425px) {
+  .testimonial-grid {
+    gap: 1.5rem;
+        grid-template-areas: "one" "two" "three" "four" "five";
   }
 }
 
@@ -171,21 +182,36 @@ p {
   margin-bottom: 0.125rem;
 }
 
-@media (min-width: 768px) {
-  .one {
-    grid-area: one;
-  }
-  .two {
-    grid-area: two;
-  }
-  .three {
-    grid-area: three;
-  }
-  .four {
-    grid-area: four;
-  }
-  .five {
-    grid-area: five;
-  }
+.one {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: one;
+}
+
+.two {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: two;
+}
+
+.three {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: three;
+}
+
+.four {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-area: four;
+}
+
+.five {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 4;
+  grid-area: five;
 }
 /*# sourceMappingURL=app.css.map */
